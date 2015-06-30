@@ -2,3 +2,23 @@
 /node_modules
 Homestead.yaml
 .env
+
+.vagrant/*
+/build
+Berksfile
+Berksfile.lock
+.project
+.buildpath
+junit.xml
+.DS_Store
+# Laravel除外ファイル
+/bootstrap/compiled.php
+composer.phar
+composer.lock
+.env.*.php
+.env.php
+Thumbs.db
+
+# PhpStorm設定ファイルを除外
+# ただし、プロジェクト内で共通の設定を適用すべきファイルはバージョン管理対象にする
+/.idea
