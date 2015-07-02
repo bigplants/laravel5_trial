@@ -21,5 +21,16 @@ Thumbs.db
 
 # PhpStorm設定ファイルを除外
 # ただし、プロジェクト内で共通の設定を適用すべきファイルはバージョン管理対象にする
-/.idea
+/.idea/workspace.xml
+/.idea/dataSources.ids
+/.idea/dataSources.xml
+/.idea/vagrant.xml
+/.idea/watcherTasks.xml
+/.idea/inspectionProfiles
+!/.idea/inspectionProfiles/Project_Default.xml
+/.idea/dataSources.local.xml
+/.idea/jsLibraryMappings.xml
+/.idea/.name
+
+# ide helper for laravel.
 _ide_helper.php
