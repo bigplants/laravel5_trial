@@ -15,8 +15,15 @@
         </testsuite>
     </testsuites>
     <filter>
-        <whitelist>
+        <whitelist addUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">app/</directory>
+            <exclude>
+                <directory suffix=".php">app/vendor</directory>
+                <directory suffix=".php">app/config</directory>
+                <directory suffix=".php">app/bootstrap</directory>
+                <directory suffix=".php">app/public</directory>
+            </exclude>
+
         </whitelist>
     </filter>
     <php>
@@ -25,4 +32,7 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
     </php>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+    </logging>
 </phpunit>
