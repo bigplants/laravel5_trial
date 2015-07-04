@@ -29,8 +29,8 @@ class ArticlesController extends Controller
      */
     public function getIndex()
     {
+        Article::whereId('');
         $articles = $this->article->all();
-
         return view('articles.index')->with(compact('articles'));
     }
 

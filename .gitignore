@@ -26,11 +26,11 @@ Thumbs.db
 /.idea/dataSources.xml
 /.idea/vagrant.xml
 /.idea/watcherTasks.xml
-/.idea/inspectionProfiles
-!/.idea/inspectionProfiles/Project_Default.xml
+!/.idea/inspectionProfiles
 /.idea/dataSources.local.xml
 /.idea/jsLibraryMappings.xml
 /.idea/.name
 
 # ide helper for laravel.
 _ide_helper.php
+.phpstorm.meta.php
