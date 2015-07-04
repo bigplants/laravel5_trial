@@ -43,7 +43,7 @@ class ArticlesController extends Controller
      */
     public function getShow($id)
     {
-        $article = $this->article->find($id);
+        $article = $this->article->findOrNew($id);
 
         return view('articles.show', compact('article'));
     }
