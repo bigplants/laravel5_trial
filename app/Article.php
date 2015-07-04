@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Article
  *
- * @property integer $id 
- * @property string $title 
- * @property string $body 
- * @property \Carbon\Carbon $created_at 
- * @property \Carbon\Carbon $updated_at 
+ * @property integer $id
+ * @property string $title
+ * @property string $body
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
  * @method static \Illuminate\Database\Query\Builder|\App\Article whereId($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Article whereTitle($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Article whereBody($value)
