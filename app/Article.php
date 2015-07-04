@@ -2,7 +2,7 @@
 
 namespace App;
 
-//use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * App\Article
@@ -18,7 +18,7 @@ namespace App;
  * @method static \Illuminate\Database\Query\Builder|\App\Article whereCreatedAt($value)
  * @method static \Illuminate\Database\Query\Builder|\App\Article whereUpdatedAt($value)
  */
-class Article extends \Eloquent
+class Article extends Model
 {
     /**
      * The table associated with the model.
