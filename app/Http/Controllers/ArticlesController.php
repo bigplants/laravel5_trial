@@ -38,6 +38,7 @@ class ArticlesController extends Controller
      * 記事の詳細
      *
      * @param $id
+     *
      * @return \Illuminate\View\View
      */
     public function getShow($id)
