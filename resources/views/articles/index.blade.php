@@ -15,11 +15,11 @@
         <tbody>
         @foreach($articles as $article)
             <tr>
-                <td>{{{ $article->title }}}</td>
-                <td>{{{ $article->body }}}</td>
-                <td>{{{ $article->created_at }}}</td>
-                <td>{{{ $article->updated_at }}}</td>
-                <td><a href="/articles/show/{{{ $article->id }}}" class="btn btn-default btn-xs">詳細</a></td>
+                <td>{{ $article->title }}</td>
+                <td>{{ $article->body }}</td>
+                <td>{{ $article->created_at }}</td>
+                <td>{{ $article->updated_at }}</td>
+                <td><a href="/articles/show/{{ $article->id }}" class="btn btn-default btn-xs">詳細</a></td>
             </tr>
         @endforeach
         </tbody>
