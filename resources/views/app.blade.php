@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <h1>Test Blog</h1>
-
+test
         <div class="col-md-12">
             @yield('content')
         </div>
