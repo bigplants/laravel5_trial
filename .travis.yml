@@ -10,7 +10,6 @@ before_script:
   - cp .env.travis .env
   - composer self-update
   - composer install --prefer-source --no-interaction --dev
-  - chmod -R 777 app/storage
 
   # db setup
   - mysql -e 'create database test_with_travis;'
