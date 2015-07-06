@@ -43,13 +43,17 @@ class ArticlesController extends Controller
     public function getShow($id)
     {
         $article = $this->article->findOrNew($id);
-
         return view('articles.show', compact('article'));
     }
 
+    /**
+     * 記事の投稿
+     *
+     * @return \Illuminate\View\View
+     */
     public function getCreate()
     {
-
+        return view('articles.create');
     }
 
     public function postCreate()
