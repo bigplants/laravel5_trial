@@ -14,6 +14,17 @@ class ExampleTest extends TestCase
     public function testBasicExample()
     {
         $this->visit('/')
-             ->see('Laravel 5');
+             ->see('Test Blog');
     }
+
+    function testArticle()
+    {
+        $this->visit('/articles/')->see('Test Blog');
+    }
+
+    function testShow()
+    {
+        $this->visit('/articles/show/1')->see('Test Blog');
+    }
+
 }

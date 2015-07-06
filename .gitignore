@@ -30,6 +30,7 @@ Thumbs.db
 /.idea/dataSources.local.xml
 /.idea/jsLibraryMappings.xml
 /.idea/.name
+/.idea/php.xml
 
 # ide helper for laravel.
 _ide_helper.php
