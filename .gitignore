@@ -19,6 +19,11 @@ composer.lock
 .env.php
 Thumbs.db
 
+# for front end.
+/public/css
+/public/js
+/public/fonts
+
 # PhpStorm設定ファイルを除外
 # ただし、プロジェクト内で共通の設定を適用すべきファイルはバージョン管理対象にする
 /.idea/workspace.xml
