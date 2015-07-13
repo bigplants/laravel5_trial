@@ -1,36 +1,32 @@
 var elixir = require('laravel-elixir');
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Less
- | file for our application, as well as publishing vendor resources.
- |
- */
+var paths = {
+    "assets": "./resources/assets/",
+    "jquery": "./vendor/bower_components/jquery/",
+    "bootstrap": "./vendor/bower_components/bootstrap-sass/assets/",
+    //"highlightjs": "./vendor/bower_components/highlightjs/",
+    "fontawesome": "./vendor/bower_components/font-awesome/"
+}
 
 elixir(function (mix) {
-    mix.sass('app.scss')
-        .copy(
-        'vendor/bower_components/jquery/dist/jquery.min.js',
-        'public/js/vendor/jquery.js'
-    )
-        .copy(
-        'vendor/bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
-        'public/js/vendor/bootstrap.js'
-    )
-        .copy(
-        'vendor/bower_components/font-awesome/css/font-awesome.min.css',
-        'public/css/vendor/font-awesome.css'
-    )
-        .copy(
-        'vendor/bower_components/font-awesome/fonts',
-        'public/fonts'
-    )
-        .copy(
-        'vendor/bower_components/angular/angular.min.js',
-        'public/js/vendor/angular.js'
-    );
+    mix
+        //.copy(paths.highlightjs + "styles/solarized_dark.css", paths.assets + "sass/solarized_dark.scss")
+        .sass("app.scss", "public/css/", {
+            includePaths: [
+                paths.bootstrap + 'stylesheets/',
+                paths.fontawesome + 'scss/'
+            ]
+        })
+        .scripts([
+            paths.jquery + "dist/jquery.js",
+            paths.bootstrap + "javascripts/bootstrap.js",
+            //paths.highlightjs + "highlight.pack.js",
+            //paths.assets + "js/libraries/jquery.backstretch.min.js",
+            paths.assets + "js/app.js"
+        ], "public/js/app.js", "./")
+        .version(["public/css/app.css", "public/js/app.js"])
+        .copy(paths.bootstrap + "fonts/bootstrap/**", "public/fonts")
+        .copy(paths.fontawesome + "fonts/**", "public/fonts")
+        .phpUnit()
+        .phpSpec();
 });

@@ -9,11 +9,14 @@
 <div class="container">
     <div class="row">
         <h1>Test Blog</h1>
-test
+
+        <h2><i class="fa fa-coffee"></i>Test</h2>
+
         <div class="col-md-12">
             @yield('content')
         </div>
     </div>
 </div>
+{!! Html::script('/js/app.js', array('async' => 'async')) !!}
 </body>
 </html>
