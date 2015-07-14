@@ -1,5 +1,6 @@
 var elixir = require('laravel-elixir');
-
+var gulp = require('gulp');
+var composer = require('gulp-composer');
 var paths = {
     "assets": "./resources/assets/",
     "jquery": "./vendor/bower_components/jquery/",
@@ -7,6 +8,14 @@ var paths = {
     //"highlightjs": "./vendor/bower_components/highlightjs/",
     "fontawesome": "./vendor/bower_components/font-awesome/"
 }
+
+elixir.extend("composer", function () {
+    gulp.task('composer', function () {
+        return composer({cwd: './', bin: 'composer'});
+    });
+    return this.queueTask("composer");
+});
+
 
 elixir(function (mix) {
     mix
@@ -27,6 +36,7 @@ elixir(function (mix) {
         .version(["public/css/app.css", "public/js/app.js"])
         .copy(paths.bootstrap + "fonts/bootstrap/**", "public/fonts")
         .copy(paths.fontawesome + "fonts/**", "public/fonts")
+        .composer()
         .phpUnit()
         .phpSpec();
 });
