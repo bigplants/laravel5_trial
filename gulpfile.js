@@ -2,7 +2,8 @@ var elixir = require('laravel-elixir');
 var gulp = require('gulp');
 var composer = require('gulp-composer');
 var bower = require('gulp-bower');
-require('laravel-elixir-browser-sync');
+var BrowserSync = require('laravel-elixir-browsersync');
+
 var paths = {
     "assets": "./resources/assets/",
     "jquery": "./vendor/bower_components/jquery/",
@@ -25,17 +26,17 @@ elixir.extend("bower", function () {
 });
 
 elixir(function (mix) {
+    BrowserSync.init();
     mix
+        .BrowserSync(
+          {
+            proxy           : "homestead.app",
+            logPrefix       : "Laravel Eixir BrowserSync",
+            logConnections  : false,
+            reloadOnRestart : false,
+            notify          : false
+          })
         .bower()
-        .browserSync([
-            'app/**/*',
-            'public/**/*',
-            'resources/views/**/*'
-        ], {
-            proxy: 'homestead.app',
-            reloadDelay: 2000
-        })
-        //.copy(paths.highlightjs + "styles/solarized_dark.css", paths.assets + "sass/solarized_dark.scss")
         .sass("app.scss", "public/css/", {
             includePaths: [
                 paths.bootstrap + 'stylesheets/',
