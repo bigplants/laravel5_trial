@@ -24,7 +24,7 @@ Thumbs.db
 /public/js
 /public/fonts
 /public/build
-
+npm-debug.log
 # PhpStorm設定ファイルを除外
 # ただし、プロジェクト内で共通の設定を適用すべきファイルはバージョン管理対象にする
 /.idea/workspace.xml
