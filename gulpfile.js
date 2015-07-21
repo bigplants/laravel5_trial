@@ -33,8 +33,8 @@ elixir(function (mix) {
             proxy           : "homestead.app",
             logPrefix       : "Laravel Eixir BrowserSync",
             logConnections  : false,
-            reloadOnRestart : false,
-            notify          : false
+            reloadOnRestart : true,
+            notify          : true
           })
         .bower()
         .sass("app.scss", "public/css/", {
