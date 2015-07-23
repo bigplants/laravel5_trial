@@ -57,3 +57,5 @@ elixir(function (mix) {
         .phpUnit()
         .phpSpec();
 });
+
+gulp.task('watch_tdd', ['watch','tdd']);
