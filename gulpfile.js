@@ -20,7 +20,7 @@ elixir.extend("composer", function () {
 });
 elixir.extend("bower", function () {
     gulp.task('bower', function () {
-        return bower({ cmd: 'install'});
+        return bower({cmd: 'install'});
     });
     return this.queueTask("bower");
 });
@@ -29,13 +29,13 @@ elixir(function (mix) {
     BrowserSync.init();
     mix
         .BrowserSync(
-          {
-            proxy           : "homestead.app",
-            logPrefix       : "Laravel Eixir BrowserSync",
-            logConnections  : false,
-            reloadOnRestart : true,
-            notify          : true
-          })
+        {
+            proxy: "homestead.app",
+            logPrefix: "Laravel Eixir BrowserSync",
+            logConnections: false,
+            reloadOnRestart: true,
+            notify: true
+        })
         .bower()
         .sass("app.scss", "public/css/", {
             includePaths: [
@@ -43,11 +43,13 @@ elixir(function (mix) {
                 paths.fontawesome + 'scss/'
             ]
         })
+        .coffee("app.coffee", "public/js/app_compiled.js")
         .scripts([
             paths.jquery + "dist/jquery.js",
             paths.bootstrap + "javascripts/bootstrap.js",
             //paths.highlightjs + "highlight.pack.js",
             //paths.assets + "js/libraries/jquery.backstretch.min.js",
+            "public/js/app_compiled.js",
             paths.assets + "js/app.js"
         ], "public/js/app.js", "./")
         .version(["public/css/app.css", "public/js/app.js"])
@@ -55,7 +57,8 @@ elixir(function (mix) {
         .copy(paths.fontawesome + "fonts/**", "public/fonts")
         .composer()
         .phpUnit()
+        //.phpUnit('./vendor/bin/phpunit', {coverageClover: "build/logs/clover.xml"})
         .phpSpec();
 });
 
-gulp.task('watch_tdd', ['watch','tdd']);
+gulp.task('watch_tdd', ['watch', 'tdd']);
