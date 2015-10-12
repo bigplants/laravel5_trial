@@ -27,6 +27,7 @@ Thumbs.db
 npm-debug.log
 # PhpStorm設定ファイルを除外
 # ただし、プロジェクト内で共通の設定を適用すべきファイルはバージョン管理対象にする
+/.idea/cake_*
 /.idea/workspace.xml
 /.idea/dataSources.ids
 /.idea/dataSources.xml
