@@ -26,19 +26,7 @@ Thumbs.db
 /public/build
 npm-debug.log
 # PhpStorm設定ファイルを除外
-# ただし、プロジェクト内で共通の設定を適用すべきファイルはバージョン管理対象にする
-/.idea/cake_*
-/.idea/workspace.xml
-/.idea/dataSources.ids
-/.idea/dataSources.xml
-/.idea/vagrant.xml
-/.idea/watcherTasks.xml
-!/.idea/inspectionProfiles
-/.idea/dataSources.local.xml
-/.idea/jsLibraryMappings.xml
-/.idea/.name
-/.idea/php.xml
-/.idea/blade.xml
+/.idea
 
 # ide helper for laravel.
 _ide_helper.php
