@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ExampleTest extends TestCase
 {
+    use DatabaseMigrations;
+
     /**
      * A basic functional test example.
      *
@@ -27,4 +29,13 @@ class ExampleTest extends TestCase
         $this->visit('/articles/show/1')->see('Test Blog');
     }
 
+    public function testSeeUser()
+    {
+        /* @var App\User $user */
+        $user = factory(App\User::class)->make([
+            'name' => 'marisa'
+        ]);
+        $user->save();
+        $this->seeInDatabase('users', ['name' => 'marisa']);
+    }
 }
