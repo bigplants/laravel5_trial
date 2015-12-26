@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/bigplants/laravel5_trial.svg)](https://travis-ci.org/bigplants/laravel5_trial)
+[![Coverage Status](https://coveralls.io/repos/bigplants/laravel5_trial/badge.svg?branch=master&service=github)](https://coveralls.io/github/bigplants/laravel5_trial?branch=master)
+[![Code Climate](https://codeclimate.com/repos/567e987bcb13131137000115/badges/059bcd51e13fcbf0ed99/gpa.svg)](https://codeclimate.com/repos/567e987bcb13131137000115/feed)
 [![Stories in Ready](https://badge.waffle.io/bigplants/laravel5_trial.png?label=ready&title=Ready)](https://waffle.io/bigplants/laravel5_trial)
 ## Laravel PHP Framework
 
