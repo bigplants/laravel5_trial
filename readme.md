@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/bigplants/laravel5_trial.png?label=ready&title=Ready)](https://waffle.io/bigplants/laravel5_trial)
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
