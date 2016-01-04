@@ -48,7 +48,7 @@
 <div class="container">
 
     <div class="row">
-        <h1>Test Blog</h1>
+        <h1>Laravel Trial</h1>
 
         <h2><i class="fa fa-coffee"></i>Test</h2>
 

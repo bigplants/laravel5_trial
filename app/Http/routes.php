@@ -10,9 +10,33 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+use App\Task;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::post('/task', function () {
+    $validator = Validator::make(Request::all(), [
+        'name' => 'required|max:10',
+    ]);
+    if ($validator->fails()) {
+        return redirect('/task')
+            ->withInput()
+            ->withErrors($validator);
+    }
+
+    $task = new Task();
+    $task->name = Request::get('name');
+    $task->save();
+
+    return redirect('/task');
+});
+Route::get('/task', function () {
+    $task = new Task();
+    $tasks = $task->all();
+//    $tasks = $task::orderBy('created_at', 'asc')->get();
+
+    return view('tasks.index', compact('tasks'));
+});
+Route::delete('/task/{id}', function ($id) {
+    //
 });
 Route::get('/', 'ArticlesController@getIndex');
 Route::controller('articles', 'ArticlesController');
