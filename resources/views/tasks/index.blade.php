@@ -2,16 +2,16 @@
 
 @section('content')
 
-        <!-- Bootstrapの定形コード… -->
+    <!-- Bootstrapの定形コード… -->
 
 <div class="panel-body">
     <!-- バリデーションエラーの表示 -->
     @include('common.errors')
-            <!-- 新タスクフォーム -->
+        <!-- 新タスクフォーム -->
     <form action="/task" method="POST" class="form-horizontal">
         {{ csrf_field() }}
 
-                <!-- タスク名 -->
+            <!-- タスク名 -->
         <div class="form-group">
             <label for="task" class="col-sm-3 control-label">Task</label>
 
@@ -31,5 +31,39 @@
     </form>
 </div>
 
-<!-- TODO: 現在のタスク -->
+<!-- 現在のタスク -->
+@if (count($tasks) > 0)
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            現在のタスク
+        </div>
+
+        <div class="panel-body">
+            <table class="table table-striped task-table">
+
+                <!-- テーブルヘッダー -->
+                <thead>
+                <th>Task</th>
+                <th>&nbsp;</th>
+                </thead>
+
+                <!-- テーブルボディー -->
+                <tbody>
+                @foreach ($tasks as $task)
+                    <tr>
+                        <!-- タスク名 -->
+                        <td class="table-text">
+                            <div>{{ $task->name }}</div>
+                        </td>
+
+                        <td>
+                            <!-- TODO: 削除ボタン -->
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+@endif
 @endsection

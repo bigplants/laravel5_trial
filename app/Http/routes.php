@@ -22,17 +22,15 @@ Route::post('/task', function () {
             ->withErrors($validator);
     }
 
-    $task = new Task();
+    $task = new App\Task();
     $task->name = Request::get('name');
     $task->save();
 
     return redirect('/task');
 });
 Route::get('/task', function () {
-    $task = new Task();
-    $tasks = $task->all();
-//    $tasks = $task::orderBy('created_at', 'asc')->get();
-
+    $task = new App\Task();
+    $tasks = $task->orderBy('created_at', 'asc')->get();
     return view('tasks.index', compact('tasks'));
 });
 Route::delete('/task/{id}', function ($id) {
